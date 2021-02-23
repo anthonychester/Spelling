@@ -14,10 +14,24 @@ for (var i = 0; i < words.length; i++) {
 
   ask.unshift(word);
 }
-document.getElementById("app").innerHTML = ask;
 
-//<div>
-//  We use the same configuration as Parcel to bundle this sandbox, you can find more
-//  info about Parcel
-//
-//</div>
+function askWord(str) {
+  var lo = str.search("_");
+  var p1 = str.slice(lo, 0);
+  var p2 = str.slice(0, lo);
+  //var out = "<form>";
+  var out = out + p1;
+  //out = +'<input type="text" id="fname" name="fname"><br>';
+  out = out + p2;
+  //out = out + `</form>`;
+  return out;
+}
+document.getElementById("app").innerHTML = ask + "<br>";
+
+for (i = 0; i > ask.length; i++) {
+  var qt = askWord(ask[i]);
+  document.getElementById("test").innerHTML =
+    document.getElementById("test").innerHTML + qt;
+
+  console.log(qt);
+}
